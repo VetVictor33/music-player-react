@@ -1,0 +1,29 @@
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 20px;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    color: #FFF;
+
+    border-bottom: 1px gray solid;
+}
+
+.Header nav {
+    display: flex;
+    font-size: 16px;
+    align-items: center;
+
+    gap: 10px
+}
+
+.Header .profile-pic {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+}
