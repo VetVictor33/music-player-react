@@ -1,0 +1,44 @@
+.Player {
+    display: flex;
+    padding: 40px;
+    position: relative;
+}
+
+
+.Player .info {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.Player .info h2,
+.Player .info p {
+    margin: 0;
+}
+
+.Player .music-controls {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.Player .controller {
+    position: relative;
+    display: flex;
+    gap: 30px;
+}
+
+.Player .controller img[alt="stop"] {
+    position: absolute;
+    left: -70px;
+    top: 8px
+}
+
+.Player .music-controls audio {
+    width: 60%;
+}

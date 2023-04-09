@@ -1,0 +1,12 @@
+.Main {
+    height: fit-content;
+}
+
+.Main .music-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 300px);
+    width: fit-content;
+    gap: 10px;
+
+    margin: 0 auto;
+}

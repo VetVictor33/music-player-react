@@ -1,0 +1,8 @@
+.MusicCard {
+    height: fit-content;
+    max-width: 300px;
+}
+
+.MusicCard img {
+    width: 100%;
+}
