@@ -15,13 +15,13 @@ export default function Main() {
 
     return (
         <main className='Main'>
-            <div>
+            <div className='musics'>
                 <h2>The best playlist</h2>
                 <div className='music-cards'>
                     {musics.map(music => {
                         return (
                             <div onClick={() => handleMusicSelection(`${music.id}`)}>
-                                <MusicCard key={music.id} music={music} />
+                                <MusicCard key={music.id} music={music} playing={playing} />
                             </div>
                         )
                     })}

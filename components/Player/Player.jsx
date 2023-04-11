@@ -35,7 +35,12 @@ export default function Player({ music }) {
         }
 
         setCurrentMusic({ ...newMusic });
-        setMusicState({ state: 'paused', src: Play });
+        if (musicState.state === "playing") {
+            audio.current.setAttribute("autoplay", "autoplay");
+        } else {
+            setMusicState({ state: 'paused', src: Play });
+            audio.current.removeAttribute("autoplay", "autoplay");
+        }
     }
 
     const handleStop = () => {

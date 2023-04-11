@@ -1,8 +1,49 @@
 .MusicCard {
     height: fit-content;
     max-width: 300px;
+    position: relative;
 }
 
 .MusicCard img {
     width: 100%;
+    position: relative;
+    padding: 3px;
+    z-index: 2;
+}
+
+.selected {
+    left: 1px;
+    width: 305px;
+    height: 305px;
+    background: #07182E;
+    position: absolute;
+    overflow: hidden;
+    z-index: 1
+}
+
+.selected::before {
+    content: '';
+    position: absolute;
+    width: 310px;
+    background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
+    height: 310px;
+    animation: rotBGimg 3s linear infinite;
+    transition: all .2s linear;
+}
+
+@keyframes rotBGimg {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.selected::after {
+    content: '';
+    position: absolute;
+    background: #07182E;
+    inset: 5px;
 }

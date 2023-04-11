@@ -1,15 +1,21 @@
 .Player {
+    box-sizing: border-box;
     display: flex;
-    padding: 40px;
-    position: relative;
+    flex-direction: column;
+    width: 100vw;
+    padding: 10px 40px;
+    position: sticky;
+    background-color: rgb(22, 22, 22);
+    bottom: 0;
+    z-index: 3;
 }
 
 
 .Player .info {
-    position: absolute;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 1px;
+    margin-bottom: 10px;
 }
 
 .Player .info h2,
@@ -20,7 +26,7 @@
 .Player .music-controls {
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
 
     align-items: center;
     justify-content: center;
@@ -30,21 +36,20 @@
 .Player .controller {
     position: relative;
     display: flex;
-    gap: 30px;
+    gap: 10px;
+    height: 40px;
 }
 
 .Player .controller img[alt="stop"] {
-    position: absolute;
     left: -70px;
-    top: 8px
+    height: 40px;
 }
 
 .Player .music-controls audio {
-    width: 60%;
+    width: 100%;
 }
 
 .Player .music-controls audio::-webkit-media-controls-enclosure {
-    /* exibe somente a barra de tempo */
     display: flex;
     align-items: center;
     background-color: transparent;
@@ -53,7 +58,6 @@
 }
 
 .Player .music-controls audio::-webkit-media-controls-timeline {
-    /* adicione estilos para a barra de tempo */
     width: 100%;
 }
 
@@ -63,4 +67,39 @@
 
 .Player .music-controls audio::-webkit-media-controls-play-button {
     display: none;
+}
+
+@media (min-width:800px) {
+    .Player .music-controls {
+        flex-direction: column;
+    }
+
+    .Player .controller {
+        height: 60px;
+        gap: 20px
+    }
+
+    .Player .controller img[alt="stop"] {
+        height: 60px;
+        position: absolute;
+        left: -80px
+    }
+}
+
+@media (min-width:1350px) {
+    .Player {
+        flex-direction: row;
+        padding: 20px 40px;
+    }
+
+    .Player .info {
+        position: absolute;
+    }
+
+    .Player .music-controls {}
+
+    .Player .music-controls audio {
+        width: 70%;
+        margin: 0 auto;
+    }
 }

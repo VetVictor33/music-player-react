@@ -3,23 +3,46 @@
     justify-content: space-between;
     align-items: center;
 
-    padding: 10px 20px;
+    padding: 5px 10px;
 
-    width: 100%;
+    width: 100vw;
     box-sizing: border-box;
 
     color: #FFF;
 
-    border-bottom: 1px gray solid;
     height: 10vh;
+    border-bottom: 1px gray solid;
+
+    position: sticky;
+    top: 0;
+
+    background-color: rgb(22, 22, 22);
+
+    z-index: 3;
+
+}
+
+.Header .logo {
+    display: flex;
+    width: 100%;
+}
+
+.Header .logo img {
+    width: 70%;
+    max-width: 300px;
+    margin: 0 auto;
 }
 
 .Header nav {
     display: flex;
-    font-size: 16px;
     align-items: center;
 
-    gap: 10px
+    gap: 20px
+}
+
+.Header nav p {
+    font-size: 16px;
+    margin: 0;
 }
 
 .Header .profile-pic {
@@ -27,4 +50,11 @@
     height: 40px;
 
     border-radius: 50%;
+}
+
+@media (min-width:1000px) {
+    .Header .logo img {
+        margin: 0;
+        margin-left: 20px;
+    }
 }
