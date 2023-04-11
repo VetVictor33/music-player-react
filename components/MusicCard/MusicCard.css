@@ -21,7 +21,17 @@
     z-index: 1
 }
 
-.selected::before {
+.playing {
+    left: 1px;
+    width: 305px;
+    height: 305px;
+    background: #07182E;
+    position: absolute;
+    overflow: hidden;
+    z-index: 1
+}
+
+.playing::before {
     content: '';
     position: absolute;
     width: 310px;
@@ -41,7 +51,7 @@
     }
 }
 
-.selected::after {
+.playing::after {
     content: '';
     position: absolute;
     background: #07182E;

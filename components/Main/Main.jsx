@@ -5,12 +5,14 @@ import Player from '../Player/Player'
 import { useState } from 'react'
 
 export default function Main() {
-    const [playing, setPlaying] = useState(musics[0])
+    const [selectedMusic, setSelectedMusic] = useState(musics[0]);
+    const [playing, setPlaying] = useState(false);
 
     function handleMusicSelection(musicId) {
         const newMusic = musics.find(music => music.id === +musicId);
-        setPlaying(newMusic);
+        setSelectedMusic(newMusic);
     }
+
 
 
     return (
@@ -20,14 +22,14 @@ export default function Main() {
                 <div className='music-cards'>
                     {musics.map(music => {
                         return (
-                            <div onClick={() => handleMusicSelection(`${music.id}`)}>
-                                <MusicCard key={music.id} music={music} playing={playing} />
+                            <div key={music.id * 3.1469} onClick={() => handleMusicSelection(`${music.id}`)}>
+                                <MusicCard key={music.id} music={music} selectedMusic={selectedMusic} playing={playing} />
                             </div>
                         )
                     })}
                 </div>
             </div>
-            <Player key={playing.id} music={playing} />
+            <Player key={selectedMusic.id} selectedMusic={selectedMusic} handleMusicSelection={handleMusicSelection} setPlaying={setPlaying} playing={playing} />
         </main>
     )
 }

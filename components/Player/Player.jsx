@@ -4,22 +4,21 @@ import Previous from '../../src/assets/previous.svg'
 import Pause from '../../src/assets/pause.svg'
 import Play from '../../src/assets/play.svg'
 import Next from '../../src/assets/next.svg'
-import { useRef, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import { musics } from '../../musics'
 
-export default function Player({ music }) {
-    const [currentMusic, setCurrentMusic] = useState({ ...music })
 
+export default function Player({ selectedMusic, handleMusicSelection, setPlaying, playing }) {
+    const [currentMusic, setCurrentMusic] = useState({ ...selectedMusic })
     const audio = useRef(null);
-    const [musicState, setMusicState] = useState({ state: 'paused', src: Play });
 
     const handleAudioPlay = () => {
-        if (musicState.state === 'paused') {
+        if (!playing) {
             audio.current.play();
-            setMusicState({ state: 'playing', src: Pause })
+            setPlaying(true);
         } else {
             audio.current.pause();
-            setMusicState({ state: 'paused', src: Play })
+            setPlaying(false);
         }
     }
 
@@ -28,26 +27,19 @@ export default function Player({ music }) {
         if (change === 'next') {
             const index = id >= musics.length ? 1 : id + 1;
             newMusic = musics.find(music => music.id === index);
+            handleMusicSelection(newMusic.id);
         } else if (change === 'previous') {
             const index = id <= 1 ? musics.length : id - 1;
             newMusic = musics.find(music => music.id === index);
-
+            handleMusicSelection(newMusic.id);
         }
-
         setCurrentMusic({ ...newMusic });
-        if (musicState.state === "playing") {
-            audio.current.setAttribute("autoplay", "autoplay");
-        } else {
-            setMusicState({ state: 'paused', src: Play });
-            audio.current.removeAttribute("autoplay", "autoplay");
-        }
     }
 
     const handleStop = () => {
         audio.current.pause();
         audio.current.currentTime = 0;
-        setMusicState({ state: 'paused', src: Play });
-
+        setPlaying(false)
     }
 
     const { id, title, artist, description, url, cover } = currentMusic;
@@ -62,10 +54,10 @@ export default function Player({ music }) {
                 <div className='controller'>
                     <img src={Stop} alt="stop" onClick={handleStop} />
                     <img src={Previous} alt="previous" onClick={() => handleSongchanges('previous')} />
-                    <img src={musicState.src} alt="pause" onClick={handleAudioPlay} />
+                    <img src={playing ? Pause : Play} alt="pause" onClick={handleAudioPlay} />
                     <img src={Next} alt="next" onClick={() => handleSongchanges('next')} />
                 </div>
-                <audio ref={audio} src={url} controls ></audio>
+                <audio ref={audio} src={url} controls autoPlay={playing} y></audio>
             </div>
         </div>
     )
