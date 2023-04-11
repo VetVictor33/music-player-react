@@ -15,7 +15,7 @@
     left: 1px;
     width: 305px;
     height: 305px;
-    background: #07182E;
+    background: pink;
     position: absolute;
     overflow: hidden;
     z-index: 1
@@ -25,7 +25,7 @@
     left: 1px;
     width: 305px;
     height: 305px;
-    background: #07182E;
+    background: pink;
     position: absolute;
     overflow: hidden;
     z-index: 1
@@ -35,13 +35,13 @@
     content: '';
     position: absolute;
     width: 310px;
-    background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
+    background-image: linear-gradient(90deg, #fff, rgb(194, 23, 52));
     height: 310px;
-    animation: rotBGimg 3s linear infinite;
+    animation: playing 3s linear infinite;
     transition: all .2s linear;
 }
 
-@keyframes rotBGimg {
+@keyframes playing {
     from {
         transform: rotate(0deg);
     }
@@ -54,6 +54,5 @@
 .playing::after {
     content: '';
     position: absolute;
-    background: #07182E;
-    inset: 5px;
+    background: pink;
 }
