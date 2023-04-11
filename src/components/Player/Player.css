@@ -40,6 +40,10 @@
     height: 40px;
 }
 
+.Player .controller img {
+    cursor: pointer;
+}
+
 .Player .controller img[alt="stop"] {
     left: -70px;
     height: 40px;
@@ -96,7 +100,6 @@
         position: absolute;
     }
 
-    .Player .music-controls {}
 
     .Player .music-controls audio {
         width: 70%;

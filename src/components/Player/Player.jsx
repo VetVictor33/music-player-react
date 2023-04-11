@@ -1,11 +1,11 @@
 import './Player.css'
-import Stop from '../../src/assets/stop.svg'
-import Previous from '../../src/assets/previous.svg'
-import Pause from '../../src/assets/pause.svg'
-import Play from '../../src/assets/play.svg'
-import Next from '../../src/assets/next.svg'
+import Stop from '../../assets/stop.svg'
+import Previous from '../../assets/previous.svg'
+import Pause from '../../assets/pause.svg'
+import Play from '../../assets/play.svg'
+import Next from '../../assets/next.svg'
 import { useMemo, useRef, useState } from 'react'
-import { musics } from '../../musics'
+import { musics } from '../../../musics'
 
 
 export default function Player({ selectedMusic, handleMusicSelection, setPlaying, playing }) {

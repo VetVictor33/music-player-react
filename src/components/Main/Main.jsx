@@ -1,5 +1,5 @@
 import './Main.css'
-import { musics } from '../../musics'
+import { musics } from '../../../musics'
 import MusicCard from '../MusicCard/MusicCard'
 import Player from '../Player/Player'
 import { useState } from 'react'

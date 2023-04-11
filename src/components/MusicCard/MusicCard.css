@@ -9,6 +9,11 @@
     position: relative;
     padding: 3px;
     z-index: 2;
+    cursor: pointer;
+}
+
+.MusicCard img:hover {
+    transform: scale(1.01);
 }
 
 .selected {

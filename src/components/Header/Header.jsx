@@ -1,6 +1,6 @@
 import './Header.css'
-import ProfilePic from '../../src/assets/profile.jpg'
-import Logo from '../../src/assets/logo.svg'
+import ProfilePic from '../../assets/profile.jpg'
+import Logo from '../../assets/logo.svg'
 
 export default function Header() {
     return (
@@ -10,7 +10,7 @@ export default function Header() {
             </div>
             <nav>
                 <img className='profile-pic' src={ProfilePic} alt="profile" />
-                <p>Bem vindo, Alberto</p>
+                <p>Bem-vindo, Alberto</p>
             </nav>
         </header >
     )
