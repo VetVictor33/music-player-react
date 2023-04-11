@@ -1,4 +1,4 @@
 .App {
-  width: 100vw;
+  min-width: 100vw;
   background: linear-gradient(180deg, #0C0505 0%, #3A3535 47.92%, #5E5858 100%);
 }

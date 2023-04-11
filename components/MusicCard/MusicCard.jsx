@@ -1,7 +1,7 @@
 import './MusicCard.css'
 
 export default function MusicCard({ music }) {
-    const { title, artist, description, url, cover } = music
+    const { title, description, cover } = music
     return (
         <div className='MusicCard'>
             <img src={cover} alt="" />

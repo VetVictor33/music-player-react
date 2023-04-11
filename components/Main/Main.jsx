@@ -7,9 +7,11 @@ import { useState } from 'react'
 export default function Main() {
     const [playing, setPlaying] = useState(musics[0])
 
-    const handleMusicSelection = (e) => {
-
+    function handleMusicSelection(musicId) {
+        const newMusic = musics.find(music => music.id === +musicId);
+        setPlaying(newMusic);
     }
+
 
     return (
         <main className='Main'>
@@ -18,12 +20,14 @@ export default function Main() {
                 <div className='music-cards'>
                     {musics.map(music => {
                         return (
-                            <MusicCard key={music.id} music={music} onClick={handleMusicSelection} />
+                            <div onClick={() => handleMusicSelection(`${music.id}`)}>
+                                <MusicCard key={music.id} music={music} />
+                            </div>
                         )
                     })}
                 </div>
             </div>
-            <Player music={playing} />
+            <Player key={playing.id} music={playing} />
         </main>
     )
 }
