@@ -22,7 +22,7 @@ export default function Player({ selectedMusic, handleMusicSelection, setPlaying
         }
     }
 
-    const handleSongchanges = (change) => {
+    const handleSongChanges = (change) => {
         let newMusic;
         if (change === 'next') {
             const index = id >= musics.length ? 1 : id + 1;
@@ -53,9 +53,9 @@ export default function Player({ selectedMusic, handleMusicSelection, setPlaying
             <div className='music-controls'>
                 <div className='controller'>
                     <img src={Stop} alt="stop" onClick={handleStop} />
-                    <img src={Previous} alt="previous" onClick={() => handleSongchanges('previous')} />
+                    <img src={Previous} alt="previous" onClick={() => handleSongChanges('previous')} />
                     <img src={playing ? Pause : Play} alt="pause" onClick={handleAudioPlay} />
-                    <img src={Next} alt="next" onClick={() => handleSongchanges('next')} />
+                    <img src={Next} alt="next" onClick={() => handleSongChanges('next')} />
                 </div>
                 <audio ref={audio} src={url} controls autoPlay={playing} y></audio>
             </div>
